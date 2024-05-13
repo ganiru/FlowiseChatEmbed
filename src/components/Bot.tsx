@@ -834,7 +834,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
 
         {props.showTitle ? (
           <div
-            class="flex flex-row items-center w-full h-[50px] absolute top-0 left-0 z-10"
+            class="flex flex-col items-center justify-center content-center w-full h-[180px] absolute top-0 left-0 z-10"
             style={{
               background: props.bubbleBackgroundColor,
               color: props.bubbleTextColor,
@@ -842,6 +842,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               'border-top-right-radius': props.isFullPage ? '0px' : '6px',
             }}
           >
+            <div><img class="h-16 w-16 p-3" alt="Company logo" src="https://botsonic.s3.amazonaws.com/b62cf5a3-d993-44dc-883d-9ff7addbf3c5.png"></img></div>
             <Show when={props.titleAvatarSrc}>
               <>
                 <div style={{ width: '15px' }} />
@@ -849,10 +850,16 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               </>
             </Show>
             <Show when={props.title}>
-              <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
+              <div>
+                <div class="px-3 whitespace-pre-wrap font-semibold max-w-full text-center">
+                  {props.title}
+                  </div>
+
+                <div class="text-xs font-extralight">Automating your success</div>
+              </div>
             </Show>
-            <div style={{ flex: 1 }} />
-            <DeleteButton
+            {/* <div style={{ flex: 1 }} /> */}
+            {/* <DeleteButton
               sendButtonColor={props.bubbleTextColor}
               type="button"
               isDisabled={messages().length === 1}
@@ -860,13 +867,13 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               on:click={clearChat}
             >
               <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
-            </DeleteButton>
+            </DeleteButton> */}
           </div>
         ) : null}
         <div class="flex flex-col w-full h-full justify-start z-0">
           <div
             ref={chatContainer}
-            class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-3 pt-[70px] relative scrollable-container chatbot-chat-view scroll-smooth"
+            class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-3 pt-[200px] relative scrollable-container chatbot-chat-view scroll-smooth"
           >
             <For each={[...messages()]}>
               {(message, index) => {
