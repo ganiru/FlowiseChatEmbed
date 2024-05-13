@@ -842,7 +842,9 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               'border-top-right-radius': props.isFullPage ? '0px' : '6px',
             }}
           >
-            <div><img class="h-16 w-16 p-3" alt="Company logo" src="https://botsonic.s3.amazonaws.com/b62cf5a3-d993-44dc-883d-9ff7addbf3c5.png"></img></div>
+            <div>
+              <img class="h-16 w-16 p-3" alt="Company logo" src="https://botsonic.s3.amazonaws.com/b62cf5a3-d993-44dc-883d-9ff7addbf3c5.png" />
+            </div>
             <Show when={props.titleAvatarSrc}>
               <>
                 <div style={{ width: '15px' }} />
@@ -851,9 +853,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             </Show>
             <Show when={props.title}>
               <div>
-                <div class="px-3 whitespace-pre-wrap font-semibold max-w-full text-center">
-                  {props.title}
-                  </div>
+                <div class="px-3 whitespace-pre-wrap font-semibold max-w-full text-center">{props.title}</div>
 
                 <div class="text-xs font-extralight">Automating your success</div>
               </div>
